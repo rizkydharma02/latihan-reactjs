@@ -41,4 +41,6 @@ const userSlice = createSlice({
   },
 });
 
+export const { setUsers, setIsLoading, setIsError } = userSlice.actions;
+
 export default userSlice.reducer;

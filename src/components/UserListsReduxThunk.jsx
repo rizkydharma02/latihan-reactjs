@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from '../features/users/usersSlice';
 
-const UserListsRedux = () => {
+const UserListsReduxThunk = () => {
   const dispatch = useDispatch();
   const { users, isLoading, isError } = useSelector((state) => state.users);
 
@@ -15,8 +15,8 @@ const UserListsRedux = () => {
 
   return (
     <>
-      <h1>Main Axios with state management redux react</h1>
-      <p>example call api with async await and library axios fetch api with redux react</p>
+      <h1>Main Axios with state management redux react and create async thunk</h1>
+      <p>example call api with async await and library axios fetch api with redux react and create async thunk</p>
 
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error : {isError}</p>}
@@ -36,4 +36,4 @@ const UserListsRedux = () => {
   );
 };
 
-export default UserListsRedux;
+export default UserListsReduxThunk;

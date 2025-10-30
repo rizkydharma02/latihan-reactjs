@@ -4,7 +4,8 @@ import MainAxios from './components/MainAxios';
 import UserListsContext from './components/UserListsContext';
 import UserProvider from './context/UserProvider';
 import MainPromise from './components/MainPromise';
-import UserListsRedux from './components/UserListsRedux';
+import UserListsReduxThunk from './components/UserListsReduxThunk';
+import UserListsReduxAxios from './components/UserListsReduxAxios';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <MainAsync />
         <MainAxios />
         <UserListsContext />
-        <UserListsRedux />
+        <UserListsReduxThunk />
+        <UserListsReduxAxios />
       </>
     </UserProvider>
   );

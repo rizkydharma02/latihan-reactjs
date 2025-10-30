@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import UserContext from './UserContext';
 
-export const UserProvider = ({ children }) => {
+const UserProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(null);
@@ -25,3 +25,5 @@ export const UserProvider = ({ children }) => {
 
   return <UserContext.Provider value={{ users, isLoading, isError }}>{children}</UserContext.Provider>;
 };
+
+export default UserProvider;

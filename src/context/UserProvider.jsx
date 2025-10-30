@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import UserContext from './UserContext';
 
 export const UserProvider = ({ children }) => {
   const [users, setUsers] = useState([]);

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import UserContext from '../context/UserContext';
 
-const UserLists = () => {
+const UserListsContext = () => {
   const { users, isLoading, isError } = useContext(UserContext);
 
   if (isLoading) return <p>Loading...</p>;
@@ -31,4 +31,4 @@ const UserLists = () => {
   );
 };
 
-export default UserLists;
+export default UserListsContext;

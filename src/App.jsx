@@ -1,9 +1,10 @@
 import './App.css';
 import MainAsync from './components/MainAsync';
 import MainAxios from './components/MainAxios';
-import UserLists from './components/UserLists';
+import UserListsContext from './components/UserListsContext';
 import UserProvider from './context/UserProvider';
 import MainPromise from './components/MainPromise';
+import UserListsRedux from './components/UserListsRedux';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <MainPromise />
         <MainAsync />
         <MainAxios />
-        <UserLists />
+        <UserListsContext />
+        <UserListsRedux />
       </>
     </UserProvider>
   );

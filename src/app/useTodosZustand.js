@@ -1,29 +1,38 @@
 import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
-const useTodosZustand = create((set) => ({
-  // state
-  todos: [],
+const useTodosZustand = create(
+  persist(
+    (set) => ({
+      // state
+      todos: [],
 
-  // action
-  addTodo: (text) =>
-    set((state) => ({
-      todos: [...state.todos, { id: Date.now(), text, completed: false }],
-    })),
+      // action
+      addTodo: (text) =>
+        set((state) => ({
+          todos: [...state.todos, { id: Date.now(), text, completed: false }],
+        })),
 
-  toggleTodo: (id) =>
-    set((state) => ({
-      todos: state.todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)),
-    })),
+      toggleTodo: (id) =>
+        set((state) => ({
+          todos: state.todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)),
+        })),
 
-  deleteTodo: (id) =>
-    set((state) => ({
-      todos: state.todos.filter((todo) => todo.id !== id),
-    })),
+      deleteTodo: (id) =>
+        set((state) => ({
+          todos: state.todos.filter((todo) => todo.id !== id),
+        })),
 
-  editTodo: (id, text) =>
-    set((state) => ({
-      todos: state.todos.map((todo) => (todo.id === id ? { ...todo, text } : todo)),
-    })),
-}));
+      editTodo: (id, text) =>
+        set((state) => ({
+          todos: state.todos.map((todo) => (todo.id === id ? { ...todo, text } : todo)),
+        })),
+    }),
+    {
+      name: 'todos',
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);
 
 export default useTodosZustand;

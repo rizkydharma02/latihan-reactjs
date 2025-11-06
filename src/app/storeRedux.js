@@ -1,12 +1,30 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import usersReducer from '../features/users/usersSlice';
 import todosReducer from '../features/todos/todosSlice';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-const storeRedux = configureStore({
-  reducer: {
-    users: usersReducer,
-    todos: todosReducer,
-  },
+const rootReducer = combineReducers({
+  users: usersReducer,
+  todos: todosReducer,
 });
 
-export default storeRedux;
+const persistConfig = {
+  key: 'root',
+  storage,
+  version: 1,
+  whitelist: ['todos'],
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+// default store redux
+export const storeRedux = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+});
+
+export const persistor = persistStore(storeRedux);

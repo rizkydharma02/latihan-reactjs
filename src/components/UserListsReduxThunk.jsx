@@ -15,8 +15,8 @@ const UserListsReduxThunk = () => {
 
   return (
     <>
-      <h1>Main Axios with state management redux react and create async thunk</h1>
-      <p>example call api with async await and library axios fetch api with redux react and create async thunk</p>
+      <h1>Main Axios with state management redux react and create async thunk best practice</h1>
+      <p>example call api with async await and library axios fetch api with redux react and create async thunk best practice</p>
 
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error : {isError}</p>}

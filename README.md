@@ -17,4 +17,4 @@
 - implementation axios and fetch for fetch API (Promise, Async Fetch and axios)
 - implementation useState and Global state using redux and zustand
 - create basic for get users from public API and todolist
-- develop todolist using local storage with redux-persist and zustand-persist
+- develop todolist using local storage with redux-persist and persist in zustand

@@ -10,6 +10,7 @@ import ListViewTodos from './sections/ListViewTodos';
 import ListViewAPI from './sections/ListViewAPI.jsx';
 import { PersistGate } from 'redux-persist/integration/react';
 import ReactForm from './components/ReactForm.jsx';
+import ListReactForm from './sections/ListReactForm.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/forms',
-    element: <ReactForm />,
+    element: <ListReactForm />,
   },
 ]);
 

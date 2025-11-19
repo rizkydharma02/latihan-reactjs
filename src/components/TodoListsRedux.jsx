@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo, deleteTodo, editTodo, toggleTodo } from '../features/todos/todosSlice';
 
-const TodoListRedux = () => {
+const TodoListsRedux = () => {
   // usestate for input
   const [input, setInput] = useState('');
   const [editText, setEditText] = useState('');
@@ -125,4 +125,4 @@ const TodoListRedux = () => {
   );
 };
 
-export default TodoListRedux;
+export default TodoListsRedux;

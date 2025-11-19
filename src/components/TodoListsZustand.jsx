@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useTodosZustand from '../app/useTodosZustand';
 
-const TodoListZustand = () => {
+const TodoListsZustand = () => {
   // useState for input
   const [input, setInput] = useState('');
   const [editingId, setEditingId] = useState(null);
@@ -121,4 +121,4 @@ const TodoListZustand = () => {
   );
 };
 
-export default TodoListZustand;
+export default TodoListsZustand;

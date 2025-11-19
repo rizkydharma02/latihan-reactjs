@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import TodoListRedux from '../components/TodolistRedux';
-import TodoListZustand from '../components/TodoListZustand';
+import TodoListsRedux from '../components/TodoListsRedux';
+import TodoListsZustand from '../components/TodoListsZustand';
 
 const ListViewTodos = () => {
   const [activeTab, setActiveTab] = useState('redux');
@@ -47,7 +47,7 @@ const ListViewTodos = () => {
           </button>
         </div>
 
-        {activeTab === 'redux' ? <TodoListRedux /> : <TodoListZustand />}
+        {activeTab === 'redux' ? <TodoListsRedux /> : <TodoListsZustand />}
       </div>
     </>
   );
